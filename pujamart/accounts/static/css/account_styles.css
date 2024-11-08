@@ -1,0 +1,126 @@
+.AccountAccess {
+    display: flex;
+    height: 80vh;
+}
+
+.welcomepic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 40vw;
+}
+
+.welcomepic img {
+    width: 90%;
+    border-radius: 10%;
+}
+
+.UserOptions {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+}
+
+.accessoptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vw;
+}
+
+.accessoptions button {
+    height: 40px;
+    width: 100px;
+    background-color: #414141;
+    cursor: pointer;
+    
+}
+
+.sigin-btn {
+    margin-right: 5vw;
+    
+}
+
+.register-btn {
+    margin-left: 5vw;
+}
+
+.Registration-form {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.Login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vw;
+}
+
+.divider-line {
+    height: 60px;
+    width:1px;
+    
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding : 1vw 0 1vw 0;
+}
+
+.form-group label {
+    font-size:large;
+    padding:0 0 5px 0;
+}
+
+.form-group input {
+    height:2vw;
+    width: 25vw;
+    border-color: #414141;
+    padding:5px 10px 5px 10px;
+    font-size: medium;
+}
+
+.form-group button {
+    height: 3vw;
+    width: 10vw;
+    font-size:medium;
+    background-color: #414141;
+}
+
+.recieveads {
+    display:flex;
+    padding:10px;
+    width:25vw;
+}
+
+.logi-btn {
+    padding-top:30px;
+}
+
+.otp-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.otp_container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.login_otp_container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>{% block title %}Welcome to PujaMart{% endblock %}</title>
+</head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static "css/mobile_styles.css" %}">
+<link rel="icon" href="{% static 'Icons/favico.ico.jpg' %}" type="image/x-icon">
+
+{% block css %} 
+
+{% endblock %}
+<body>
+    <nav class="coupons-nav" >
+        <marquee>
+        Get 10% off on puja essentials with code PUJADEALS
+        </marquee>
+        <img src={% static "Icons/close.png" %} alt="CloseOffer" onclick="CloseTopOffer()">
+    </nav>
+    <nav class="cat-nav">
+        <H2>
+           <a onclick="window.location.href='{% url 'Home' %}'">PujaMart</a>
+        </H2>
+        <div class="cat-nav-links">
+            <ul class="cat-links">
+                <li><a href="">Books<img src={% static "Icons/arrow_down.svg" %}></a></li>
+                <li><a href="">Puja Essentials<img src={% static "Icons/arrow_down.svg" %}></a></li>
+                <li><a href="">Festivals<img src={% static "Icons/arrow_down.svg" %}></a></li>
+                <li><a href="">Subscribe<img src={% static "Icons/arrow_down.svg" %}></a></li>
+                <li><a href="">About<img src={% static "Icons/arrow_down.svg" %}></a></li>
+            </ul>
+        </div>
+        <form class="product-search" id="product-search">
+            <input 
+                type="search" 
+                id="site-search" 
+                placeholder="Search...."
+                size="50"
+            />
+            <img id='search-img'  src={% static "Icons/search.svg" %} alt="Search">
+        </form>
+        <div class="User-Info">
+            <img src={% static "Icons/account_logo.svg" %} alt="Accounts" id='Accounts' >
+                <div class="cart-info">
+                    <img src={% static "Icons/cart_logo.svg" %} alt="Cart" onclick="window.location.href='{% url 'cart' %}'">
+                    <p id="Cart-Counter">0</p>
+                </div>
+        </div>     
+        <div class="cat-btn">
+            <img src={% static "Icons/menu.svg" %} id='menu-btn' alt="Menu" onclick="ShowMenu()"/>
+            <img src={% static "Icons/close.svg" %} id="menu-close-btn" onclick="CloseMenu()"/>
+        </div>  
+    </nav>
+    
+    {% include 'account_info.html' %}
+
+    {% block container %}
+        
+    {% endblock %}
+</body>
+
+{% block js %}
+        
+{% endblock %}
+<script src="{% static 'js/script.js'%}"></script>
+</html>

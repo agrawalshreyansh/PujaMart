@@ -1,0 +1,65 @@
+@media screen and (max-width: 480px) { 
+    .welcomepic {
+        display: none;
+    }
+
+    .UserOptions {
+        margin-top: 50px;
+        width: 100vw;
+    }
+
+    .AccountAccess {
+        height: 90vh;
+    }
+
+    .Registration-form {
+        height: 70vh;
+    }
+
+    .Login-form {
+        height: 50vh;
+    }
+
+    .form-group label {
+        font-size:larger;
+        padding:0 0 10px 0;
+    }
+
+    .form-group input {
+        height:7vw;
+        width: 75vw;
+        padding:5px 10px 5px 10px;
+        font-size: medium;
+    }
+    
+    .form-group button {
+        height: 8vw;
+        width: 25vw;
+        font-size:large;
+        margin-top:25px;
+    }
+    
+    .recieveads {
+        display:flex;
+        padding:10px;
+        width:25vw;
+    }
+    
+    .login-btn {
+        font-size:larger;
+        padding-top:30px;
+    }
+
+    .recieveads {
+        width: 75vw;
+        font-size: large;
+    }
+
+    .accessoptions button {
+        font-size: large;
+    }
+
+
+
+
+}

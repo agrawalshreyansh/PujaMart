@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block container %}
+    <div class="promotions-container">
+        <div class="promotion-text">
+            <H1>Explore and Shop for traditional Puja Essentials</H1>
+            <H3>Select from wide range of puja items and kits from various regions of India</H3>
+            <div class="Website-Stats">
+                <span>
+                    <h2>2K+</h2>
+                    <p>Products</p>
+                </span>
+                <span>
+                    <h2>100+</h2>
+                    <p>Suppliers</p>
+                </span>
+                <span>
+                    <h2>10K+</h2>
+                    <p>Happy Customers</p>
+                </span>
+            </div>    
+        </div>
+        <div class="promotion-products">
+            <img src={% static "Images/welcome.jpg" %}/>
+        </div>
+    </div>
+    <div class="divider-line"></div>
+    <section class="featured-products-slider"> 
+        <h2 class="product-category" style="font-size: x-large;">Featured products this month</h2>
+        <button class="pre-btn"><img src={% static "Icons/arrow_forward.svg" %} alt=""></button>
+        <button class="nxt-btn"><img src={% static "Icons/arrow_forward.svg" %} alt=""></button>
+        <div class="product-container">
+            {% for Featured in FeaturedPro %}
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img src="{{ Featured.image.url }}"  alt="">
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">{{ Featured.name }}</h2>
+                        <div class='product-price'>
+                            <span class="actual-price">Rs.{{ Featured.marked_price }}</span>
+                            <span class="price">Rs.{{  Featured.selling_price }}</span>
+                        </div>    
+                        <button class="cart-add" data-id="FP{{ Featured.id }}"><img src={% static "Icons/add_cart.svg" %} alt=""><span>Add to Cart</span></button>
+                        <div class='quantity-manage' id="FP{{ Featured.id }}">
+                            <img src={% static "Icons/remove.svg" %} alt='Decrease' class='decrease'>
+                            <span class='quantity'></span>
+                            <img src={% static 'Icons/add.svg' %} alt='Increase' class='increase'>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <div class="divider-line"></div>
+    <section class="product-slider"> 
+        <h2 class="product-category">All time selling best products</h2>
+        <button class="pre-btn"><img src={% static "Icons/arrow_forward.svg" %} alt=""></button>
+        <button class="nxt-btn"><img src={% static "Icons/arrow_forward.svg" %} alt=""></button>
+        <div class="product-container">
+            {% for BestSellers in BestSeller %}
+                <div class="product-card">    
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img src={{ BestSellers.image.url }}  alt="">
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">{{ BestSellers.name }}</h2>
+                        <div class='product-price'>
+                            <span class="actual-price">Rs.{{ BestSellers.marked_price }}</span>
+                            <span class="price">Rs.{{  BestSellers.selling_price }}</span>        
+                        </div>
+                        <button class="cart-add" data-id="BS{{ BestSellers.id }}"><img src={% static "Icons/add_cart.svg" %} alt=""><span>Add to Cart</span></button>
+                        <div class='quantity-manage' id="BS{{ BestSellers.id }}">
+                            <img src={% static "Icons/remove.svg" %} alt='Decrease' class='decrease'>
+                            <span class='quantity'></span>
+                            <img src={% static 'Icons/add.svg' %} alt='Increase' class='increase'>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <div class="divider-line"></div>
+    <div class="newsletter">
+        <div class="banner-img">
+            <img src={% static "Images/newsletter.jpg" %} alt="newsletter">
+        </div>
+        <div class="banner-text">
+            <h1>Recieve updates about the aspicious occasions, festivals and know about our latest products and launches</h1>
+            <form class="email-letter">
+                <input
+                id="Email-news"
+                placeholder="Enter your Email Here"
+                type="email"
+                size="50"
+                />
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>    
+    </div>
+    <div class="divider-line"></div>
+    <footer>
+        <div class="foot-contents">
+            <div class="help">
+                <h3>Help</h3>
+                <img src={% static "Icons/add.svg" %} alt="More" onclick="foot_help()" class="Open">
+                <img src={% static "Icons/close.svg" %} alt="Close" onclick="foot_help_close()" class="Close">
+                <ul>
+                    <li>Payments</li>
+                    <li>Orders</li>
+                    <li>Shipping</li>
+                    <li>Privacy Policy</li>
+                    <li>Return and Refunds</li>
+                    <li>Terms and Condition</li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <h3>Social Media</h3>
+                <img src={% static "Icons/add.svg" %} alt="More" onclick="foot_social()" class="Open" id="social_open">
+                <img src={% static "Icons/close.svg" %} alt="Close" onclick="foot_social_close()" class="Close" id="social_close">
+                <ul>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>X</li>
+                    <li>Youtube</li>
+                    <li>Linkedin</li>
+                </ul>
+            </div>
+            <div class="address">
+                <h3>Contact Us</h3>
+                <img src={% static "Icons/add.svg" %} alt="More" onclick="foot_add()" class="Open" id="add_open">
+                <img src={% static "Icons/close.svg" %} alt="Close" onclick="foot_add_close()" class="Close" id="add_close">
+                <p>123 Puja Street, Harmony City<br>
+                    Email : contact@pujamart.com<br>
+                    Phone : +91 12124 23223
+                </p>
+            </div>
+        </div>    
+        <div class="trademark">
+            <p>Copyright © 2024, PujaMart, All Rights Reserved</p>
+        </div>
+    </footer>
+{% endblock %}

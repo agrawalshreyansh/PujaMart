@@ -1,0 +1,18 @@
+{% load static %}
+
+{% block css %} 
+<link rel="stylesheet" href="{% static 'css/account_info.css' %}">
+<link rel="stylesheet" href="{% static 'css/account_info_styles.css' %}">
+{% endblock %}
+
+<div id="User_Account_Info" class="popup">
+    <div class="Account_Content">
+        <span class="closeBtn">&times;</span>
+        <h3>Name</h3>
+        <p>Email</p> 
+        <button class='logout-btn' onclick='Logout()' >Logout</div>
+    </div>
+</div>
+
+
+

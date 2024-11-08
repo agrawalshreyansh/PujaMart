@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+<link rel='stylesheet' href="{% static 'css/account_styles.css' %}">
+<link rel='stylesheet' href="{% static 'css/account_mobile_styles.css' %}">
+{% endblock %}
+
+{% block container %}
+<div class="AccountAccess">
+    <div class='welcomepic'>
+        <img src="{% static 'Images/loginwelcome.jpg' %}">
+    </div>
+    <div class="UserOptions">
+        <div class="accessoptions">
+            <button class="sigin-btn" id="sigin" onclick='login_form()'>Sign In</button>
+            <div class="divider-line"></div>
+            <button class="register-btn" id="register" onclick='register_form()'>Register</button>
+        </div>
+        <form action="" method="post" class='Registration-form' id='Registration-form'>
+            {% csrf_token %}
+            <div class="form-group"> 
+                <label for="first_name">First Name:</label> 
+                <input type="text" id="first_name" name="first_name" required> 
+            </div>
+            <div class="form-group"> 
+                <label for="last_name">Last Name:</label> 
+                <input type="text" id="last_name" name="last_name" required> 
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required>
+            </div> 
+            <div class="form-group">
+                <label for="Phone Number">Phone Number:</label>
+                <input type="tel" id="Phone_Number" name="Phone" required>
+            </div> 
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            <div class="recieveads">
+                <input type="checkbox" id="ads" name="ads" checked>
+                <span>Recieve updates about our latest launches and products via Emails and Whatsapp</span>
+            </div>
+            <div class="form-group" id='form-submit'>
+                <button type="submit" class="btn" >Register</button>
+            </div>
+            <div class="login-btn">
+                <span>Already Registered?  <span onclick='login_form()' style='cursor:pointer;'>Login here</span></span>
+            </div>
+        </form>
+        <form class='otp_container' method="post" id='otp_container'>
+            {% csrf_token %}
+            <div class="form-group" id='otp-input'>
+                <label for="otp">Enter OTP recieved on your Email :</label>
+                <input type="Number" id="otp" name="otp" >
+            </div>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            <div class="form-group" id='form-submit'>
+                <button type="submit" class="btn">Register</button>
+            </div>
+        </form>
+        
+        
+        <form method="post" class='Login-form' id='Login-form'>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="email">Enter your Registered Email ID:</label>
+                <input type="email" id="login_email" name="login_email" required>
+            </div>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            <div class="form-group" id='login-form-submit'>
+                <button type="submit" class="btn">Log In</button>
+            </div>
+            <div class="login-submit-btn">
+                <span>Don't Have an Account?  <span onclick='register_form()' style='cursor:pointer;'>Register here</span></span>
+            </div>
+        </form>
+
+        <form class='login_otp_container' method='POST' id='login_otp_container'>
+            <div class="form-group" id='otp-input'>
+                <label for="login_otp">Enter OTP recieved on your Email :</label>
+                <input type="Number" id="login_otp" name="login_otp" >
+            </div>
+            <div class="form-group" id='form-submit'>
+                <button type="submit" class="btn">Log In</button>
+            </div>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/account.js' %}"></script>
+{% endblock %}

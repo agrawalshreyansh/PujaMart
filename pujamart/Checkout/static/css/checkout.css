@@ -1,0 +1,151 @@
+
+.add-title {
+    margin: 1vw 5vw 0 ;
+}
+
+.order-title {
+    margin: 1vw 5vw 0 ;
+}
+
+.checkout-container {
+    display: flex;
+}
+
+.address_form {
+    width: 50vw;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 15px 5vw;
+   
+}
+
+.form-element label {
+    font-size: larger;
+    margin: 5px 0;
+}
+
+.form-element input {
+    height: 30px;
+    width: 35vw;
+    background: black;
+    font-size: medium;
+    border-radius: 10px;
+}
+
+#form-submit button {
+    height: 35px;
+    width: 150px;
+    cursor: pointer;
+}
+
+#form-submit {
+    display: flex;
+    align-items: center;
+    width: 35vw;
+}
+
+#state {
+    height: 25px;
+    width: 35vw;
+    background-color: black;
+}
+
+.pincity-container {
+    display: flex;
+}
+
+#Pincode {
+    width: 15vw;
+}
+
+#Town {
+    width: 15vw;
+}
+
+.order-container {
+    margin-left: 5vw;
+    border-radius: 1px solid #595959 ;
+}
+
+.vertical-divide {
+    border: 1px solid #595959;
+    margin: 4vw 0;
+}
+
+.horz-divide {
+    border: 1px solid #595959;
+    width: 30vw;
+    margin: 1vw 5vw;
+}
+
+#PromoCode {
+    width: 25vw;
+}
+
+.code-btn {
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.order-total {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5vw;
+}
+
+.order-total span {
+    font-size: larger;
+    margin: 5px 0;
+}
+
+
+
+.order-total div {
+    display: flex;
+    margin: 5px 0;
+}
+
+
+.order-total div > span:nth-child(2) {
+    margin-left: auto;
+}
+
+.total_items {
+    display: flex;
+    margin: 0 5vw;
+    font-size: larger;
+}
+
+.total_items > span:nth-child(2) {
+    margin-right: 5px;
+
+}
+
+.total_items img {
+    margin-right: 10px;
+}
+
+.cart-details {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.order-btn {
+    display: flex;
+    margin: 5vw 5vw;
+    justify-content: center;
+}
+
+.order-btn button {
+    width: 20vw;
+    height: 4vw;
+    font-size: x-large;
+    background-color: #595959;
+    border-radius: 20px;
+    border: none;
+}

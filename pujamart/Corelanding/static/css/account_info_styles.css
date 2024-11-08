@@ -1,0 +1,16 @@
+@media screen and (max-width: 480px) { 
+
+    #User_Account_Info {
+        left: 15vw;
+        top: 28vw;
+    }
+
+    .Account_Content {
+        width: 65vw;
+    }
+
+    .logout-btn {
+        height: 6vw;
+        width: 15vw;
+    }
+}

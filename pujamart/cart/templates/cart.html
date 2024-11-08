@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+<link rel='stylesheet' href="{% static 'css/cart_styles.css' %}">
+<link rel='stylesheet' href="{% static 'css/cart_mobile_styles.css' %}">
+{% endblock %}
+
+{% block container %}
+    <div class='back-btn'>
+        <button class='go_back'>
+            <img src='{% static "Icons/arrow_backward.svg" %}'>
+            <span>Go Back</span>
+        </button>
+    </div>
+    <div class = 'cart'>
+        <div class='cart_header'>
+            <span class='cart-title'></span>
+            <button class='checkout-btn' onclick="window.location.href='{% url 'checkout' %}'">Checkout</button> 
+        </div>
+            <div class='cart-display'>
+        {% for items in cart_items %}
+            <div class='cart-items' id='{{ items.Id }}'>
+                <div class='item-pic'>
+                    <img src='{{ items.Image }}'>
+                </div>
+                <div class='item-desc' >
+                    <span class='item-name'>{{ items.Name }}</span>
+                    <div class='item-price'>
+                        <span class='DP'>Rs.{{ items.SP }}  </span> 
+                        <span class='MRP'>Rs.{{ items.MRP }}</span>
+                    </div>   
+                </div>  
+                <div class='quantity-control'>
+                    <img src='{% static "Icons/remove.svg" %}' alt='decrease'>
+                    <span class='item-quantity'> {{ items.Quantity }} </span>
+                    <img src='{% static "Icons/add.svg" %}' alt='increase'>
+                    <button class='item-delete' >
+                        <img src='{% static "Icons/delete.svg" %}' alt='Delete'>
+                    </button>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/cart.js' %}"></script>
+{% endblock %}
